@@ -1,0 +1,46 @@
+/* === Small CSS Reset === */
+*{
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-width: 100%;
+    background: #222;
+    color: hotpink;
+    font-family: monospace, sans-serif, Arial, Helvetica;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    min-height: 15vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header li {
+    padding: 1rem 2rem;
+    list-style: none;
+}
+
+header li a {
+    text-decoration: none;
+    color: gold;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
