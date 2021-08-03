@@ -1,46 +1,188 @@
-/* === Small CSS Reset === */
-*{
+/* === variables === */
+:root{
+    --pri-color: #9FEDD7;
+    --sec-color: #026670;
+    --ter-color: #EDEAE5;
+    --qua-color: #FEF9C7;
+    --main-font: 'Roboto', Courier, monospace;
+  }
+  
+  /* === Small CSS Reset === */
+  *{
     margin: 0;
     padding: 0;
-}
-*, *::after, *::before{
+  }
+  *, *::after, *::before{
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body{
     width: 100%;
-    min-width: 100%;
-    background: #222;
-    color: hotpink;
-    font-family: monospace, sans-serif, Arial, Helvetica;
-}
-
-header {
+    min-height: 100%;
+    background: var(--sec-color);
+    color: var(--pri-color);
+    font-family: var(--main-font);
+  }
+  
+  header{
     display: flex;
     width: 100%;
     min-height: 15vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-header nav ul {
+  }
+  
+  header nav ul{
     display: flex;
-}
-
-header li {
-    padding: 1rem 2rem;
+  }
+  
+  header li{
+    padding: 1em 2em;
     list-style: none;
-}
-
-header li a {
+  }
+  
+  header li a{
     text-decoration: none;
-    color: gold;
-}
+    color: var(--qua-color);
+  }
+  
+  
+  /* === Moods === */
+  
+  main{
+    width: 100%;
+    display: grid;
+    grid-gap: 1em;
+    padding: 0 1em;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .mood_container{
+    position: relative;
+    padding: 1em;
+    border: solid 3px #F4976C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mood_container .counter{
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    color: var(--qua-color);
+    font-size: 0.8em;
+  }
+  
+  .mood_container .date{
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: var(--qua-color);
+    font-size: 0.8em;
+  }
+  
+  .mood_container .delete-button{
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: var(--qua-color);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
 
-#main-container {
+  .mood_container .trash:hover {
+      color: #F4976C
+  }
+  
+  .mood_container .mood{
+    margin: 1em 0;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  
+  .more_info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+  }
+  
+  .more_info i{
+    font-size: 2em;
+    padding: 0.3em;
+  }
+  
+  .weatherDis, .more_info > div:nth-child(2), .airDis{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  
+  .face_container{
+    margin-bottom: 1em;
+    border: 8px solid #FCE181;
+  }
+  
+  .aq1{
+    color: rgb(112, 255, 112);
+  }
+  .aq2{
+    color: rgb(255, 255, 109);
+  }
+  .aq3{
+    color: rgb(255, 191, 72);
+  }
+  .aq4{
+    color: rgb(255, 95, 95);
+  }
+  .aq5{
+    color: rgb(180, 39, 180);
+  }
+  .aq6{
+    color: rgb(129, 28, 28);
+  }
+  
+  
+  #main-container{
+    display: flex;
     flex-direction: column;
-}
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #main-container video{
+    margin: 1.5em 0;
+    border: 6px solid #FCE181;
+    background: #FEF9C7;
+  }
+  
+  footer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1em;
+  }
+  footer a{
+    color: var(--qua-color);
+  }
+  @media only screen and (min-width : 320px) and (max-width : 900px) {
+    
+    main{
+      display: grid;
+      grid-gap: 1em;
+      padding: 0 1em;
+      grid-template-columns: 1fr;
+    }
+  
+    .mood_container{
+      max-width: 90%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
